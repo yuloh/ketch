@@ -1,0 +1,21 @@
+{
+    "name": "yuloh/ketch",
+    "require": {
+        "mustache/mustache": "^2.10",
+        "symfony/console": "^3.0",
+        "guzzle/guzzle": "^3.9",
+        "doctrine/inflector": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Allan",
+            "email": "matthew.james.allan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yuloh\\Ketch\\": "src"
+        }
+    }
+}
