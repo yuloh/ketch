@@ -2,10 +2,12 @@
 
 namespace Yuloh\Ketch\Filters;
 
+use function Yuloh\Neko\kebab_case;
+
 class KebabCase
 {
     public function __invoke($word)
     {
-        return strtolower(preg_replace('~(?<=\\w)([A-Z])~', '-$1', str_replace('_', '-', $word)));
+        return kebab_case($word);
     }
 }

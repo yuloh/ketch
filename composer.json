@@ -10,7 +10,8 @@
         "mustache/mustache": "^2.10",
         "symfony/console": "^3.0",
         "guzzle/guzzle": "^3.9",
-        "doctrine/inflector": "^1.1"
+        "doctrine/inflector": "^1.1",
+        "yuloh/neko": "^0.1.0"
     },
     "license": "MIT",
     "authors": [

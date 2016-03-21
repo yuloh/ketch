@@ -2,12 +2,12 @@
 
 namespace Yuloh\Ketch\Filters;
 
-use Doctrine\Common\Inflector\Inflector;
+use function Yuloh\Neko\pascal_case;
 
 class PascalCase
 {
     public function __invoke($word)
     {
-        return Inflector::classify($word);
+        return pascal_case($word);
     }
 }

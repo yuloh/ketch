@@ -2,12 +2,12 @@
 
 namespace Yuloh\Ketch\Filters;
 
-use Doctrine\Common\Inflector\Inflector;
+use function Yuloh\Neko\snake_case;
 
 class SnakeCase
 {
     public function __invoke($word)
     {
-        return Inflector::tableize($word);
+        return snake_case($word);
     }
 }

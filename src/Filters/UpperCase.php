@@ -6,6 +6,6 @@ class UpperCase
 {
     public function __invoke($word)
     {
-        return ucfirst($word);
+        return ucwords($word);
     }
 }
