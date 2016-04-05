@@ -22,7 +22,7 @@ A ketch template is just a github repo of text files using mustache syntax.  Her
     },
     "autoload": {
         "psr-4": {
-            "{{ vendor }}\\{{ package }}\\": "src"
+            "{{ vendor | case.pascal }}\\{{ package | case.pascal }}\\": "src"
         }
     }
 }
