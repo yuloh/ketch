@@ -103,7 +103,7 @@ class Ketch
     /**
      * @param $dest
      */
-    protected function createDestinationDirectory($dest)
+    private function createDestinationDirectory($dest)
     {
         if (!file_exists($dest)) {
             if (!mkdir($dest, 0777, true)) {
@@ -118,7 +118,7 @@ class Ketch
      * @param string $filename The filename.
      * @return string
      */
-    protected function getDestinationPathName($src, $dest, $filename)
+    private function getDestinationPathName($src, $dest, $filename)
     {
         return str_replace($src, $dest, $filename);
     }
@@ -147,7 +147,7 @@ class Ketch
      * @param string $rendered     The rendered template.
      * @return $this
      */
-    protected function writeRenderedTemplate($destFilename, $rendered)
+    private function writeRenderedTemplate($destFilename, $rendered)
     {
         if (file_put_contents($destFilename, $rendered) === false) {
             throw new \RuntimeException(sprintf('Could not create the file "%s".', $destFilename));
