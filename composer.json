@@ -1,11 +1,5 @@
 {
     "name": "yuloh/ketch",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/yuloh/expect.git"
-        }
-    ],
     "require": {
         "mustache/mustache": "^2.10",
         "symfony/console": "^3.0",
@@ -28,6 +22,6 @@
     "require-dev": {
         "behat/behat": "~3.1.0rc2",
         "phpunit/phpunit": "^5.2",
-        "yuloh/expect": "dev-master"
+        "yuloh/expect": "0.1.*"
     }
 }
