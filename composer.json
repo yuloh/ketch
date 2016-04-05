@@ -22,5 +22,8 @@
         "behat/behat": "~3.1.0rc2",
         "phpunit/phpunit": "^5.2",
         "yuloh/expect": "0.1.*"
-    }
+    },
+    "bin": [
+        "ketch"
+    ]
 }
