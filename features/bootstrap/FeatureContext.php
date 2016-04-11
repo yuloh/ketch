@@ -48,11 +48,11 @@ class FeatureContext implements Context, SnippetAcceptingContext
         $cmd = "php {$this->ketchBinary} create {$template} {$project}";
 
         $logger = new Yuloh\Expect\ConsoleLogger();
-        $e = Expect::spawn($cmd, $this->cwd);
+        $e = Expect::spawn($cmd, $this->cwd, $logger);
 
         foreach ($table->getHash() as $expectation) {
             $e
-                ->expect($expectation['question'])
+                ->expect($expectation['question'], 5)
                 ->send($expectation['answer']);
         }
 
