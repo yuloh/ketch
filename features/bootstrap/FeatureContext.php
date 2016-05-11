@@ -45,7 +45,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iCreateAProjectNamedUsingTheTemplateAndTheAnswers($project, $template, TableNode $table)
     {
-        $cmd = "php {$this->ketchBinary} create {$template} {$project}";
+        $cmd = "php {$this->ketchBinary} create {$project} {$template}";
 
         $logger = new Yuloh\Expect\ConsoleLogger();
         $e = Expect::spawn($cmd, $this->cwd, $logger);

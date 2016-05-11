@@ -7,6 +7,16 @@ if (file_exists(__DIR__ . '/../../autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
-$app = new Symfony\Component\Console\Application('Ketch', '0.1.0');
-$app->add(new Yuloh\Ketch\CreateCommand());
+use Yuloh\Ketch\Commands;
+
+$app = new Silly\Application('Ketch', '0.1.0');
+
+$app
+    ->command('create name [template]', new Commands\Create())
+    ->defaults(['template' => 'yuloh/skeleton'])
+    ->descriptions('Create a new project', [
+        'name'     => 'The project name, i.e. "my-project"',
+        'template' => 'The Template name, i.e. "yuloh/skeleton".  This should be a github repository.',
+    ]);
+
 $app->run();

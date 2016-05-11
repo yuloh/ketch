@@ -2,9 +2,9 @@
     "name": "yuloh/ketch",
     "require": {
         "mustache/mustache": "^2.10",
-        "symfony/console": "~2.3|~3.0",
         "guzzle/guzzle": "^3.9",
-        "yuloh/neko": "^0.1.0"
+        "yuloh/neko": "^0.1.0",
+        "mnapoli/silly": "^1.3"
     },
     "license": "MIT",
     "authors": [
