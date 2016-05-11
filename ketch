@@ -13,10 +13,10 @@ $app = new Silly\Application('Ketch', '0.1.0');
 
 $app
     ->command('create name [template]', new Commands\Create())
-    ->defaults(['template' => 'yuloh/skeleton'])
+    ->defaults(['template' => 'yuloh/ketch'])
     ->descriptions('Create a new project', [
         'name'     => 'The project name, i.e. "my-project"',
-        'template' => 'The Template name, i.e. "yuloh/skeleton".  This should be a github repository.',
+        'template' => 'The Template\'s Github repository, i.e. "yuloh/ketch"',
     ]);
 
 $app->run();

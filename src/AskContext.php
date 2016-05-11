@@ -60,9 +60,14 @@ class AskContext
         return $answer;
     }
 
-
     private static function ask($question)
     {
+        // Readline works much better, but it is breaking the tests and
+        // I'm not sure how to fix it at the moment.
+        if (function_exists('readline') && getenv('KETCH_TEST') === false) {
+            return readline($question);
+        }
+
         echo $question;
         $stdin  = fopen('php://stdin', 'r');
         $answer = preg_replace('{\r?\n$}D', '', fgets($stdin, 4096));

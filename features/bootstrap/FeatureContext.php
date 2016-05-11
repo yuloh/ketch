@@ -27,9 +27,12 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function __construct()
     {
-        $this->root = realpath(__DIR__ . '/../../');
+        $this->root        = realpath(__DIR__ . '/../../');
         $this->ketchBinary = $this->root . '/ketch';
-        $this->cwd = realpath(__DIR__ . '/../working-directory');
+        $this->cwd         = realpath(__DIR__ . '/../working-directory');
+        if (!file_exists($this->cwd)) {
+            mdkir($this->cwd);
+        }
     }
 
     /**
@@ -45,7 +48,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iCreateAProjectNamedUsingTheTemplateAndTheAnswers($project, $template, TableNode $table)
     {
-        $cmd = "php {$this->ketchBinary} create {$project} {$template}";
+        $cmd = "KETCH_TEST=true php {$this->ketchBinary} create {$project} {$template}";
 
         $logger = new Yuloh\Expect\ConsoleLogger();
         $e = Expect::spawn($cmd, $this->cwd, $logger);
@@ -80,10 +83,21 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
+     * @Then the file :file should exist in :project
+     */
+    public function theFileShouldExistInProject($file, $project)
+    {
+        $path = sprintf('%s/%s/%s', $this->cwd, $project, $file);
+
+        Assert::assertFileExists($path);
+    }
+
+    /**
       * @AfterScenario
       */
      public function cleanCwd(AfterScenarioScope $scope)
      {
+        return;
          $contents = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($this->cwd, \FilesystemIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::CHILD_FIRST
