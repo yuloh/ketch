@@ -2,10 +2,10 @@
 
 namespace Yuloh\Ketch\Filters;
 
-class UpperCase
+class TitleCase
 {
     public function __invoke($word)
     {
-        return ucfirst($word);
+        return ucwords($word);
     }
 }

@@ -76,6 +76,7 @@ class Ketch
         return [
             'case' => [
                 'upper'  => new Filters\UpperCase(),
+                'title'  => new Filters\TitleCase(),
                 'snake'  => new Filters\SnakeCase(),
                 'pascal' => new Filters\PascalCase(),
                 'camel'  => new Filters\CamelCase(),
@@ -120,6 +121,14 @@ class Ketch
      */
     private function getDestinationPathName($src, $dest, $filename)
     {
+        // .gitattributes can't be added to templates or it will
+        // cause the files listed to not be exported.  Instead
+        // it's added as .gitattributes.dist, so we change it
+        // back to .gitattributes when writing the file.
+        if (stristr($filename, '.gitattributes.dist') !== false) {
+            $filename = str_replace('.gitattributes.dist', '.gitattributes', $filename);
+        }
+
         return str_replace($src, $dest, $filename);
     }
 
