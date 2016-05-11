@@ -62,9 +62,7 @@ class AskContext
 
     private static function ask($question)
     {
-        // Readline works much better, but it is breaking the tests and
-        // I'm not sure how to fix it at the moment.
-        if (function_exists('readline') && getenv('KETCH_TEST') === false) {
+        if (function_exists('readline')) {
             return readline($question);
         }
 

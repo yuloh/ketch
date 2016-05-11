@@ -14,9 +14,9 @@ use Behat\Behat\Hook\Scope\AfterScenarioScope;
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
-    private $root;
-
     private $ketchBinary;
+
+    private $cwd;
 
     /**
      * Initializes context.
@@ -27,11 +27,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function __construct()
     {
-        $this->root        = realpath(__DIR__ . '/../../');
-        $this->ketchBinary = $this->root . '/ketch';
-        $this->cwd         = realpath(__DIR__ . '/../working-directory');
+        $this->ketchBinary = __DIR__ . '/test-ketch';
+        $this->cwd         = realpath(__DIR__ . '/..') . '/working-directory';
         if (!file_exists($this->cwd)) {
-            mdkir($this->cwd);
+            mkdir($this->cwd);
         }
     }
 
@@ -48,7 +47,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iCreateAProjectNamedUsingTheTemplateAndTheAnswers($project, $template, TableNode $table)
     {
-        $cmd = "KETCH_TEST=true php {$this->ketchBinary} create {$project} {$template}";
+        $cmd = "php {$this->ketchBinary} create {$project} {$template}";
 
         $logger = new Yuloh\Expect\ConsoleLogger();
         $e = Expect::spawn($cmd, $this->cwd, $logger);
@@ -97,7 +96,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
       */
      public function cleanCwd(AfterScenarioScope $scope)
      {
-        return;
          $contents = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($this->cwd, \FilesystemIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::CHILD_FIRST
