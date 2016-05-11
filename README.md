@@ -92,19 +92,19 @@ composer global require yuloh/ketch:dev-master
 
 ### Creating Projects
 
-To create a new project invoke ketch like this: `ketch create <template> <name>`.  Here's an example, creating the new project  "my-project" with the template "yuloh/skeleton".  The project will be created in the "my-project" folder in the current directory.
+To create a new project invoke ketch like this: `ketch create <template> <name>`.  Here's an example, creating the new project  "my-project" with the template that comes with this repo.  The project will be created in the "my-project" folder in the current directory.
 
 ```
-ketch create yuloh/skeleton my-project
+ketch create yuloh/ketch my-project
 ```
 
 ### Creating Templates
 
-A template is just a github repository with mustache templates in the `template` directory.  If you want to see a simple template check out the [yuloh/skeleton](https://github.com/yuloh/skeleton) template.
+A template is just a github repository with mustache templates in the `template` directory.  If you want to see a simple template check out the [default Ketch](./template) template.
 
 #### Filters
 
-Ketch ships with a few common filters.  The default filters are `case.upper`, `case.snake`, `case.pascal`, `case.camel`, and `case.kebab`.  You can use a filter with a pipe like this: `{{ variable | case.upper }}`.
+Ketch ships with a few common filters.  The default filters are `case.upper`, `case.title`, `case.snake`, `case.pascal`, `case.camel`, and `case.kebab`.  You can use a filter with a pipe like this: `{{ variable | case.upper }}`.
 
 #### Boolean values
 
@@ -117,6 +117,12 @@ You can use boolean values too.  Input values of 'y/n', 'yes/no', or 'true/false
     {{/include behat [yes]?}}
 }
 ```
+
+#### Using .gitattributes
+
+Since Ketch downloads the release tar for templates, having a `.gitattributes` file would prevent ketch from being able to download any of the files listed in it.
+
+To get around this limitation you can name your file `.gitattributes.dist`.  Ketch will rename it to `.gitattributes` once it's downloaded.
 
 ### Library Usage
 
