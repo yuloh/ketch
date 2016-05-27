@@ -48,7 +48,7 @@ description: An awesome project created with ketch.
 Project ready!
 ```
 
-...and your new `my-project` directory is created with the answers filled in, and you are ready to go.
+...and your new project is created.
 
 ```json
 {
