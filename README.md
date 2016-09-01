@@ -8,86 +8,14 @@ Since Ketch is written in PHP, you don't need to use Yeoman to setup your PHP pr
 
 ## How It Works
 
-A ketch template is just a github repo of text files using mustache syntax.  Here's a simple PHP project template, with a `composer.json` and `README.md`:
-
-```json
-{
-    "name": "{{ vendor }}/{{ package }}",
-    "type": "library",
-    "description": "{{ description }}",
-    "license": "MIT",
-    "require": {
-        "php" : "~5.5|~7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : "4.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "{{ vendor | case.pascal }}\\{{ package | case.pascal }}\\": "src"
-        }
-    }
-}
-```
-
-```markdown
-# {{ package | case.upper }}
-
-{{ description }}
-
-## Install
-
-    $ composer require {{ vendor }}/{{ package }}
-```
-
-Ketch will ask you to fill in the blanks:
-
-```bash
-ketch create yuloh/skeleton my-project
-vendor: yuloh
-package: my-project
-description: An awesome project created with ketch.
-Project ready!
-```
-
-...and your new project is created.
-
-```json
-{
-    "name": "yuloh/my-project",
-    "type": "library",
-    "description": "An awesome project created with ketch.",
-    "license": "MIT",
-    "require": {
-        "php" : "~5.5|~7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : "4.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Yuloh\\MyProject\\": "src"
-        }
-    }
-}
-```
-
-```markdown
-# My-project
-
-An awesome project created with ketch.
-
-## Install
-
-    $ composer require yuloh/my-project
-```
+A ketch template is just a github repo full of text files using mustache syntax.  Ketch will download the repo, ask you to fill in the blanks, and build your project.
 
 ## Install
 
 Ketch is installed using [composer](https://getcomposer.org/).  You need to install ketch globally so that you can use it in any directory.
 
 ```
-composer global require yuloh/ketch:dev-master
+composer global require yuloh/ketch
 ```
 
 ## Usage
