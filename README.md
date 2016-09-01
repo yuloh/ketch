@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Ketch is a really simple way to start new projects.  Pick a template, answer a few questions, and your project is setup.  You don't need to copy from paste or start from scratch.
+Ketch is a really simple way to start new projects.  Pick a template, answer a few questions, and your project is setup.  You don't need to copy & paste or start from scratch.
+
+Since Ketch is written in PHP, you don't need to use Yeoman to setup your PHP projects anymore.
 
 ## How It Works
 
