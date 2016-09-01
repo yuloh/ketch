@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2016 {{ author name }} <{{ author email }}>
+Copyright (c) 2016 {{ author name }} <{{ author email }}> and all {{ package }} contributors
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
