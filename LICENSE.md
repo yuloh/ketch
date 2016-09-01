@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2016 Matt Allan matthew.james.allan@gmail.com
+Copyright (c) 2016 Matt Allan matthew.james.allan@gmail.com and all ketch contributors.
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
