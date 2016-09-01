@@ -22,17 +22,14 @@ composer global require yuloh/ketch
 
 ### Creating Projects
 
-To create a new project invoke ketch like this: `ketch create <template> <name>`.  Here's an example, creating the new project  "my-project" with the template that comes with this repo.  The project will be created in the "my-project" folder in the current directory.
+To create a new project invoke ketch like this: `ketch create <template> <name>`.  The template should be a github repo, and the name should be the folder name you want your project created in.  Here's an example, creating the new project  "my-project" with the template that comes with this repo.  The project will be created in the "my-project" folder in the current directory.
 
 ```
 ketch create yuloh/ketch my-project
 ```
 
-If you are actually using the default template, you can just omit the template argument entirely.
+**note:** If you are actually using the default template, you can just omit the template argument entirely.
 
-```
-ketch create my-project
-```
 
 ### Creating Templates
 
