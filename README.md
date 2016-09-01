@@ -100,6 +100,12 @@ To create a new project invoke ketch like this: `ketch create <template> <name>`
 ketch create yuloh/ketch my-project
 ```
 
+If you are actually using the default template, you can just omit the template argument entirely.
+
+```
+ketch create my-project
+```
+
 ### Creating Templates
 
 A template is just a github repository with mustache templates in the `template` directory.  If you want to see a simple template check out the [default Ketch](./template) template.
