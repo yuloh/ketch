@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "{{ vendor | case.pascal }}\\{{ package | case.pascal }}\\Tests\\": "tests"
+            "{{ vendor | case.pascal }}\\{{ package | case.pascal }}\\": "tests"
         }
     },
     "scripts": {
