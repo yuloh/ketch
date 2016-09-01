@@ -125,7 +125,7 @@ class Ketch
         // cause the files listed to not be exported.  Instead
         // it's added as .gitattributes.dist, so we change it
         // back to .gitattributes when writing the file.
-        if (stristr($filename, '.gitattributes.dist') !== false) {
+        if (basename($filename) === '.gitattributes.dist') {
             $filename = str_replace('.gitattributes.dist', '.gitattributes', $filename);
         }
 
