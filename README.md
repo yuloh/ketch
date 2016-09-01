@@ -124,6 +124,14 @@ Since Ketch downloads the release tar for templates, having a `.gitattributes` f
 
 To get around this limitation you can name your file `.gitattributes.dist`.  Ketch will rename it to `.gitattributes` once it's downloaded.
 
+#### Comments
+
+Since ketch uses mustache syntax, you can use mustache comments in your template.
+
+```
+{{!  This is a comment that won't show up in the generated file }}
+```
+
 ### Library Usage
 
 Ketch can also be used as a PHP library.  This is helpful if you want to customize the scaffolding process.  Usage is like this:
