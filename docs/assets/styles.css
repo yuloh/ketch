@@ -433,21 +433,16 @@ header, main, footer {
 }
 
 header h1 {
-  font-size: 64px;
+  font-size: 2rem;
   font-weight: 300;
 }
 
 header p {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.1rem;
 }
 
 footer {
   padding-top: 20px;
-}
-
-footer p {
-  font-size: 14px;
 }
 
 main h1, h2, h3, h4, h5 {
@@ -461,8 +456,6 @@ pre {
 }
 
 pre code {
-  font-size: 14px;
-  line-height: 18px;
   color: #f8f8f2;
 }
 
